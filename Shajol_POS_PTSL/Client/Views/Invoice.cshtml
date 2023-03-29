@@ -1,0 +1,76 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="~/Client/Scripts/Invoice.js"></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <form class="row g-3">
+            <input type="hidden" id="hdnInvoiceId" value="0" />
+            <div class="col-md-6">
+                <label for="txtInvoiceDetailsId" class="form-label">Invoice Details Id: </label>
+                <input type="text" id="txtInvoiceDetailsId" class="form-control" required />
+            </div>
+            <div class="col-md-6">
+                <label for="txtproductId" class="form-label">product Id: </label>
+                <input type="text" id="txtproductId" class="form-control" required />
+            </div>
+            <div class="col-md-6">
+                <label for="txtproductName" class="form-label">product Name: </label>
+                <input type="text" id="txtproductName" class="form-control" required />
+            </div>
+            <div class="col-md-6">
+                <label for="txtproductAmount" class="form-label">product Amount: </label>
+                <input type="text" id="txtproductAmount" class="form-control" required />
+            </div>
+            <div class="col-md-6">
+                <label for="txtIsPaid" class="form-label">Is Paid:(true/false) </label>
+                <input type="text" id="txtIsPaid" class="form-control" required />
+            </div>
+            @*<div class="col-md-6">
+                <label for="txtIsPaid" class="form-label">Is Paid: </label>
+                <select id="txtIsPaid" class="form-control">
+                    <option value="">Select</option>
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+            </div>*@
+
+            <div class="col-md-6">
+
+            </div>
+            <div class="col-md-6">
+                <button type="button" class="btn btn-primary" id="btnCreateInvoice" onclick="createInvoice()">Create</button>&nbsp;&nbsp;&nbsp;
+                <button type="button" class="btn btn-info" id="btnUpdateInvoice" disabled>Update</button>
+            </div>
+        </form>
+
+        <br />
+
+        <table class="table table-bordered table-striped table-responsive" id="tblFullInvoice">
+            <thead>
+                <tr>
+                    <th>Invoice Details Id</th>
+                    <th>product Id</th>
+                    <th>product Name</th>
+                    <th>product Amount</th>
+                    <th>Is Paid?</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="tblInvoice">
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
